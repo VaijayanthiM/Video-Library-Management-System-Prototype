@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form id='form4' method="post" action="/ProceedToPayment">
+			</br>
+			</br>
+
+
+			<table border="1" width="900px" align="center" id="movies">
+			 <thead>
+				<tr>
+					<th>CartId</th>
+					<th>MovieId</th>
+					<th>MemberId</th>
+					<th>Issue Date</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr></thead>
+				<tbody>
+				{{#each memberCart}}
+				<tr id="{{cartId}}">
+					<td>{{cartId}}</td>
+					<td>{{movieId}}</td>
+					<td>{{memberId}}</td>
+					<td>{{issueDate}}</td>
+					<td>{{quantity}}</td>
+					<td>{{price}}</td>
+					<td><input type="button" id="{{cartId}}" class="button"
+						value="Remove" /></td>
+				</tr>
+				{{/each}}
+				</tbody>
+			</table>
+			</br>
+			</br>
+			<input type="button" id="{{cartId}}" class="button"	value="Proceed to Payment" onclick="submit()"/>
+		</form>
+		
+		
+		
+</body>
+</html>
